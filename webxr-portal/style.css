@@ -1,0 +1,73 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: #080b18; color: #f3f5ff; font-family: Arial, sans-serif; }
+.header {
+  min-height: 75px; padding: 0 7%; display: flex; align-items: center;
+  justify-content: space-between; gap: 20px; border-bottom: 1px solid #252b48;
+  background: #080b18; position: sticky; top: 0; z-index: 10;
+}
+.logo { font-size: 24px; font-weight: bold; color: white; text-decoration: none; letter-spacing: 3px; }
+.logo span, .hero h1 span { color: #8e6bff; }
+nav { display: flex; gap: 30px; }
+nav a { color: #aab2d0; text-decoration: none; font-size: 12px; letter-spacing: 2px; }
+.status { color: #5af5c6; font-size: 11px; white-space: nowrap; }
+.hero {
+  min-height: 510px; padding: 100px 10%; display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  background: radial-gradient(ellipse at 80% 50%, #38226c 0%, transparent 45%), linear-gradient(120deg, #0b1024, #10152c);
+}
+.hero-content { z-index: 1; }
+.eyebrow { color: #9b7cff; letter-spacing: 4px; font-size: 11px; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(38px, 6vw, 70px); line-height: 1.1; letter-spacing: 2px; }
+.description { color: #aab2d0; margin: 25px 0; }
+.main-button {
+  display: inline-block; padding: 16px 28px; color: white; text-decoration: none;
+  background: linear-gradient(90deg, #724aff, #a04dff); border-radius: 5px;
+  font-size: 12px; font-weight: bold; letter-spacing: 2px;
+}
+.orb {
+  position: absolute; right: 12%; width: 260px; height: 260px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #b9a1ff, #6932d0 45%, #16102e 75%);
+  box-shadow: 0 0 80px #7448ff88;
+}
+.games-section { padding: 80px 8%; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 30px; }
+.section-heading h2, .about h2 { font-size: 30px; letter-spacing: 2px; }
+#game-count { color: #65e9d0; font-size: 12px; white-space: nowrap; }
+#search {
+  width: 100%; padding: 16px; background: #11172c; border: 1px solid #333b60;
+  color: white; border-radius: 5px; outline: none;
+}
+#search:focus { border-color: #9674ff; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 30px; }
+.filter { padding: 10px 18px; background: #141a30; border: 1px solid #343b5d; color: #abb4d5; cursor: pointer; border-radius: 4px; }
+.filter.active { background: #744aff; color: white; }
+.game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+.game-card { background: #11172a; border: 1px solid #272f50; border-radius: 8px; overflow: hidden; transition: .25s; }
+.game-card:hover { transform: translateY(-5px); border-color: #9273ff; box-shadow: 0 0 25px #7654ff33; }
+.game-art { height: 155px; display: grid; place-items: center; font-size: 55px; background: radial-gradient(circle, #35266c, #10172c); }
+.game-info { padding: 20px; }
+.game-info h3 { margin-bottom: 10px; }
+.game-info p { color: #9ba5c4; font-size: 13px; line-height: 1.6; min-height: 42px; }
+.tag { display: inline-block; margin: 12px 0; color: #70e8d0; font-size: 10px; letter-spacing: 1px; }
+.play-button { width: 100%; padding: 12px; background: #744aff; border: none; border-radius: 4px; color: white; cursor: pointer; }
+.play-button:hover { background: #9674ff; }
+.about { padding: 80px 10%; text-align: center; background: #10152a; }
+.about p:last-child { color: #aab2d0; margin-top: 20px; line-height: 1.8; }
+.player { display: none; position: fixed; inset: 3%; background: #070a16; border: 1px solid #8b6bff; border-radius: 8px; z-index: 30; overflow: hidden; }
+.player.open { display: flex; flex-direction: column; }
+.player-header { min-height: 48px; padding: 0 15px; display: flex; justify-content: space-between; align-items: center; color: #b8a4ff; }
+.player-header button { background: none; border: none; color: white; cursor: pointer; padding: 10px; }
+#game-frame { width: 100%; flex: 1; border: none; background: #080b18; }
+footer { padding: 25px; text-align: center; color: #68718e; font-size: 11px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 650px) {
+  .header { padding: 0 5%; }
+  nav { gap: 12px; }
+  nav a { font-size: 10px; }
+  .status { display: none; }
+  .hero { padding: 80px 7%; }
+  .orb { opacity: .25; right: -100px; }
+  .games-section { padding: 55px 6%; }
+  .section-heading h2, .about h2 { font-size: 23px; }
+}
