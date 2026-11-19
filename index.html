@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b18">
+  <title>NEBULA XR | VR GAME PORTAL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#">NEBULA<span>XR</span></a>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#games">GAMES</a>
+    <a href="#about">ABOUT</a>
+  </nav>
+  <div class="status">● XR PORTAL ONLINE</div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="eyebrow">WELCOME TO THE NEXT DIMENSION</p>
+      <h1>ENTER THE<br><span>VIRTUAL WORLD.</span></h1>
+      <p class="description">WebXR対応ゲームを探して、新しい世界へ飛び込もう。</p>
+      <a href="#games" class="main-button">EXPLORE GAMES →</a>
+    </div>
+    <div class="orb" aria-hidden="true"></div>
+  </section>
+
+  <section class="games-section" id="games">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">DISCOVER YOUR WORLD</p>
+        <h2>XR GAME LIBRARY</h2>
+      </div>
+      <span id="game-count">0 GAMES</span>
+    </div>
+
+    <label class="sr-only" for="search">ゲームを検索</label>
+    <input type="search" id="search" placeholder="ゲーム名・ジャンルを検索...">
+
+    <div class="filters" aria-label="ジャンルで絞り込み">
+      <button class="filter active" data-filter="all">ALL</button>
+      <button class="filter" data-filter="action">ACTION</button>
+      <button class="filter" data-filter="exploration">EXPLORATION</button>
+      <button class="filter" data-filter="demo">DEMO</button>
+    </div>
+
+    <div class="game-grid" id="game-grid" aria-live="polite"></div>
+  </section>
+
+  <section class="about" id="about">
+    <p class="eyebrow">ABOUT NEBULA XR</p>
+    <h2>THE FUTURE IS IN YOUR HANDS.</h2>
+    <p>NEBULA XRは、WebXR対応コンテンツを紹介するVRゲームポータルサイトです。</p>
+  </section>
+</main>
+
+<div class="player" id="player" aria-hidden="true">
+  <div class="player-header">
+    <span id="player-title">GAME PLAYER</span>
+    <button id="close-player" type="button">✕ CLOSE</button>
+  </div>
+  <iframe id="game-frame" title="VR Game"
+    allow="xr-spatial-tracking; fullscreen"
+    allowfullscreen></iframe>
+</div>
+
+<footer><p>© 2026 NEBULA XR / WEBXR GAME PORTAL</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
